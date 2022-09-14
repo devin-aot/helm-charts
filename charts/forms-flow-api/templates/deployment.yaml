@@ -157,7 +157,7 @@ spec:
           failureThreshold: 5
           httpGet:
             path: /
-            port: "{{ .Values.ingress.port }}"
+            port: {{ .Values.ingress.port }}
             scheme: HTTP
           initialDelaySeconds: 120
           periodSeconds: 60
@@ -167,7 +167,7 @@ spec:
           failureThreshold: 5
           httpGet:
             path: /
-            port: "{{ .Values.ingress.port }}"
+            port: {{ .Values.ingress.port }}
             scheme: HTTP
           initialDelaySeconds: 120
           periodSeconds: 60
