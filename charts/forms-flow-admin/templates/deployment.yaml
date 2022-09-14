@@ -132,4 +132,20 @@ spec:
             memory: "{{ .Values.resources.requests.memory }}"
         stdin: true
         tty: true
+        livenessProbe:
+          failureThreshold: 5
+          initialDelaySeconds: 30
+          periodSeconds: 5
+          successThreshold: 1
+          tcpSocket:
+            port: {{ .Values.ingress.port }}
+          timeoutSeconds: 5
+        readinessProbe:
+          failureThreshold: 5
+          initialDelaySeconds: 30
+          periodSeconds: 5
+          successThreshold: 1
+          tcpSocket:
+            port: {{ .Values.ingress.port }}
+          timeoutSeconds: 5
       restartPolicy: Always
